@@ -24,6 +24,22 @@ const tabs = [
 function App() {
   const [activeTab, setActiveTab] = useState('title')
 
+  const currentIndex = tabs.findIndex(tab => tab.id === activeTab)
+  const isFirst = currentIndex === 0
+  const isLast = currentIndex === tabs.length - 1
+
+  const goToPrevious = () => {
+    if (!isFirst) {
+      setActiveTab(tabs[currentIndex - 1].id)
+    }
+  }
+
+  const goToNext = () => {
+    if (!isLast) {
+      setActiveTab(tabs[currentIndex + 1].id)
+    }
+  }
+
   const renderPage = () => {
     switch (activeTab) {
       case 'title': return <TitlePage />
@@ -43,6 +59,14 @@ function App() {
     <>
       <nav className="nav-container">
         <div className="nav-header">
+          <button
+            className={`nav-arrow nav-arrow-prev ${isFirst ? 'hidden' : ''}`}
+            onClick={goToPrevious}
+            aria-label="Previous page"
+          >
+            &#8592;
+          </button>
+
           <div className="tab-navigation">
             {tabs.map(tab => (
               <button
@@ -54,6 +78,14 @@ function App() {
               </button>
             ))}
           </div>
+
+          <button
+            className={`nav-arrow nav-arrow-next ${isLast ? 'hidden' : ''}`}
+            onClick={goToNext}
+            aria-label="Next page"
+          >
+            &#8594;
+          </button>
         </div>
       </nav>
 
