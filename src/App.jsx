@@ -58,7 +58,7 @@ function App() {
       </nav>
 
       <main className="main-content">
-        <div className={`tab-content active ${activeTab === 'title' ? 'title-tab' : ''} ${activeTab === 'intro' ? 'intro-tab' : ''} ${activeTab === 'timeline' ? 'timeline-tab' : ''} ${activeTab === 'routes' ? 'routes-tab' : ''} ${activeTab === 'descent' ? 'descent-tab' : ''} ${activeTab === 'demographics' ? 'demographics-tab' : ''} ${activeTab === 'accidents' ? 'accidents-tab' : ''} ${activeTab === 'conclusion' ? 'conclusion-tab' : ''}`}>
+        <div className={`tab-content active ${activeTab === 'title' ? 'title-tab' : ''} ${activeTab === 'intro' ? 'intro-tab' : ''} ${activeTab === 'timeline' ? 'timeline-tab' : ''} ${activeTab === 'routes' ? 'routes-tab' : ''} ${activeTab === 'altitude' ? 'altitude-tab' : ''} ${activeTab === 'descent' ? 'descent-tab' : ''} ${activeTab === 'demographics' ? 'demographics-tab' : ''} ${activeTab === 'accidents' ? 'accidents-tab' : ''} ${activeTab === 'conclusion' ? 'conclusion-tab' : ''}`}>
           {renderPage()}
         </div>
       </main>

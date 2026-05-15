@@ -108,7 +108,7 @@ function AltitudePage() {
         <h1 className="altitude-title">ALTITUDE EFFECTS</h1>
 
         <p className="altitude-description">
-          Supplemental oxygen, improved weather forecasting, and advanced climbing gear have increased Everest summit success rates and reduced ascent times. However, the region above 8,000 meters—known as the "Death Zone"—remains extremely dangerous. Time becomes critical, making fast ascents and descents essential for survival, which is why the highest camps are typically established below 8,000 meters.
+          Supplemental oxygen, improved weather forecasting, and advanced climbing gear have increased Everest summit success rates and reduced ascent times. However, the region above 8,000 meters, known as the "Death Zone", remains extremely dangerous. Time becomes critical, making fast ascents and descents essential for survival, which is why the highest camps are typically established below 8,000 meters.
         </p>
 
         <img src={AltitudeHealthSvg} alt="Altitude Health Effects" className="altitude-health-img" />
