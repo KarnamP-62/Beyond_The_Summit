@@ -1,0 +1,703 @@
+/* BEYOND THE SUMMIT - Dashboard Styles */
+/* 9-Page Interactive Everest Expedition Analysis */
+
+:root {
+    --bg-light: #EBE9E3;
+    --blue-primary: #00508D;
+    --text-dark: #10183A;
+    --bg-dark: #1a1a2e;
+    --bg-dark-alt: #16213e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* ========== NAVIGATION ========== */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Light nav for title page */
+.nav-container.nav-light {
+    background: var(--bg-light);
+    box-shadow: 0 20px 0 var(--bg-light);
+}
+
+.nav-container.nav-light .nav-logo {
+    display: none;
+}
+
+.nav-container.nav-light .nav-header {
+    justify-content: center;
+}
+
+.nav-container.nav-light .tab-btn {
+    color: var(--text-dark);
+}
+
+.nav-container.nav-light .tab-btn:hover {
+    color: var(--blue-primary);
+    background: rgba(0, 80, 141, 0.1);
+}
+
+.nav-container.nav-light .tab-btn.active {
+    color: #fff;
+    background: var(--blue-primary);
+    border: none;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+}
+
+.nav-logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+}
+
+.tab-navigation {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.tab-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    color: #a0a0a0;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.3), rgba(155, 89, 182, 0.3));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    padding-top: 70px;
+    min-height: 100vh;
+}
+
+/* Keep padding for title page too since nav is visible */
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#title.tab-content {
+    padding: 0;
+    background: var(--bg-light);
+    margin-top: -1px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== TITLE PAGE ========== */
+.title-page {
+    min-height: calc(100vh - 70px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 6rem;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.title-main {
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    line-height: 1.1;
+    color: var(--blue-primary);
+    margin-bottom: 2rem;
+}
+
+.title-subtitle {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.title-author {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+.title-mountain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.title-mountain svg {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.title-mountain img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    filter: invert(21%) sepia(90%) saturate(1000%) hue-rotate(186deg) brightness(95%) contrast(101%);
+}
+
+.next-btn {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 1.1rem;
+    color: var(--blue-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.next-btn:hover {
+    opacity: 0.7;
+}
+
+/* Hide default nav on title page */
+.title-page-active .nav-container {
+    background: transparent;
+    border-bottom: none;
+}
+
+.title-page-active .nav-logo {
+    display: none;
+}
+
+.title-page-active .tab-navigation {
+    display: none;
+}
+
+/* ========== INTRO PAGE ========== */
+.intro-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.intro-header p {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.intro-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.intro-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.intro-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+}
+
+.intro-card p {
+    color: #c0c0c0;
+    line-height: 1.7;
+}
+
+.intro-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro-card ul li {
+    padding: 0.5rem 0;
+    color: #c0c0c0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.intro-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* ========== CHART CONTAINERS ========== */
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-header p {
+    color: #a0a0a0;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.chart-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.chart-container h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 350px !important;
+}
+
+.chart-container.full-width {
+    grid-column: 1 / -1;
+}
+
+.chart-container.half-width {
+    grid-column: span 1;
+}
+
+/* Map container */
+#summitMap {
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1a1a2e;
+}
+
+/* ========== STATS ROW ========== */
+.stats-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card .value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3498db;
+}
+
+.stat-card .label {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin-top: 0.25rem;
+}
+
+.stat-card.danger .value {
+    color: #e74c3c;
+}
+
+.stat-card.success .value {
+    color: #2ecc71;
+}
+
+.stat-card.warning .value {
+    color: #f39c12;
+}
+
+/* ========== INSIGHT CARDS ========== */
+.insights-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.insight-card {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.insight-card h4 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.insight-card p {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ========== CONCLUSION PAGE ========== */
+.conclusion-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.conclusion-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.conclusion-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.conclusion-header p {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+}
+
+.key-findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.finding-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    border-left: 4px solid #3498db;
+}
+
+.finding-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.finding-card p {
+    color: #c0c0c0;
+    line-height: 1.7;
+}
+
+.finding-card.highlight {
+    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(155, 89, 182, 0.1));
+}
+
+.credits {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    margin-top: 2rem;
+}
+
+.credits h3 {
+    margin-bottom: 1rem;
+    color: #a0a0a0;
+}
+
+.credits p {
+    color: #808080;
+    font-size: 0.9rem;
+}
+
+.credits a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* ========== DESCENT PAGE ========== */
+.descent-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.descent-type-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.descent-type-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.descent-type-card .count {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3498db;
+}
+
+.descent-type-card .deaths {
+    font-size: 1rem;
+    color: #e74c3c;
+    margin-top: 0.5rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title-page {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .title-main {
+        font-size: 3rem;
+    }
+
+    .title-mountain {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .title-mountain img,
+    .title-mountain svg {
+        max-width: 400px;
+    }
+
+    .descent-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-header {
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+    }
+
+    .tab-navigation {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .tab-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .main-content {
+        padding-top: 100px;
+    }
+
+    .tab-content {
+        padding: 1rem;
+    }
+
+    .title-page {
+        padding: 1.5rem;
+        min-height: calc(100vh - 100px);
+    }
+
+    .title-main {
+        font-size: 2.2rem;
+    }
+
+    .title-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .title-mountain img,
+    .title-mountain svg {
+        max-width: 280px;
+    }
+
+    .next-btn {
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart-container canvas {
+        height: 280px !important;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== LEAFLET MAP OVERRIDES ========== */
+.leaflet-container {
+    background: #1a1a2e !important;
+}
+
+.info.legend {
+    background: rgba(26, 26, 46, 0.9) !important;
+    color: #fff !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.info.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}

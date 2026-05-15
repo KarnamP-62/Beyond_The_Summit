@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320">
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 14px; font-weight: 500; fill: #10183A; }
+    .label { font-family: Arial, sans-serif; font-size: 11px; fill: #10183A; }
+    .legend-text { font-family: Arial, sans-serif; font-size: 10px; fill: #10183A; }
+    .axis-label { font-family: Arial, sans-serif; font-size: 9px; fill: #666; }
+  </style>
+
+  <!-- Title -->
+  <text x="250" y="25" text-anchor="middle" class="title">Main Routes - Expeditions &amp; Summits</text>
+
+  <!-- Y-axis labels -->
+  <text x="45" y="70" text-anchor="end" class="axis-label">200K</text>
+  <text x="45" y="115" text-anchor="end" class="axis-label">150K</text>
+  <text x="45" y="160" text-anchor="end" class="axis-label">100K</text>
+  <text x="45" y="205" text-anchor="end" class="axis-label">50K</text>
+  <text x="45" y="250" text-anchor="end" class="axis-label">0</text>
+
+  <!-- Grid lines -->
+  <line x1="50" y1="67" x2="450" y2="67" stroke="#E5E5E5" stroke-width="1"/>
+  <line x1="50" y1="112" x2="450" y2="112" stroke="#E5E5E5" stroke-width="1"/>
+  <line x1="50" y1="157" x2="450" y2="157" stroke="#E5E5E5" stroke-width="1"/>
+  <line x1="50" y1="202" x2="450" y2="202" stroke="#E5E5E5" stroke-width="1"/>
+  <line x1="50" y1="247" x2="450" y2="247" stroke="#10183A" stroke-width="1"/>
+
+  <!-- S Col-SE Ridge bars (scaled: max 191911 = 180px height) -->
+  <!-- Expeditions: 1347 -> 1.3px (too small, min 8px) -->
+  <rect x="80" y="239" width="40" height="8" fill="#00508D"/>
+  <!-- Summit Members: 191911 -> 180px -->
+  <rect x="125" y="67" width="40" height="180" fill="#1E7197"/>
+  <!-- Summit Hired: 66982 -> 63px -->
+  <rect x="170" y="184" width="40" height="63" fill="#CDE3F3"/>
+
+  <!-- N Col-NE Ridge bars -->
+  <!-- Expeditions: 790 -> 0.7px (min 6px) -->
+  <rect x="280" y="241" width="40" height="6" fill="#00508D"/>
+  <!-- Summit Members: 68389 -> 64px -->
+  <rect x="325" y="183" width="40" height="64" fill="#1E7197"/>
+  <!-- Summit Hired: 1950 -> 2px (min 4px) -->
+  <rect x="370" y="243" width="40" height="4" fill="#CDE3F3"/>
+
+  <!-- X-axis labels -->
+  <text x="145" y="270" text-anchor="middle" class="label">S Col-SE Ridge</text>
+  <text x="345" y="270" text-anchor="middle" class="label">N Col-NE Ridge</text>
+
+  <!-- Legend -->
+  <rect x="120" y="290" width="14" height="14" fill="#00508D"/>
+  <text x="138" y="301" class="legend-text">Expeditions</text>
+
+  <rect x="220" y="290" width="14" height="14" fill="#1E7197"/>
+  <text x="238" y="301" class="legend-text">Summit Members</text>
+
+  <rect x="350" y="290" width="14" height="14" fill="#CDE3F3"/>
+  <text x="368" y="301" class="legend-text">Summit Hired</text>
+</svg>

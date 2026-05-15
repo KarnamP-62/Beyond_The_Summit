@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Nepal slice (61%) - Red -->
+  <path d="M150,100 L150,20 A80,80 0 1,1 87.64,168.28 Z" fill="#DC2626"/>
+
+  <!-- China slice (39%) - Blue -->
+  <path d="M150,100 L87.64,168.28 A80,80 0 0,1 150,20 Z" fill="#1E40AF"/>
+
+  <!-- Legend -->
+  <rect x="20" y="85" width="16" height="16" fill="#DC2626"/>
+  <text x="42" y="97" font-family="Arial, sans-serif" font-size="12" fill="#10183A">Nepal (South) - 61%</text>
+
+  <rect x="20" y="110" width="16" height="16" fill="#1E40AF"/>
+  <text x="42" y="122" font-family="Arial, sans-serif" font-size="12" fill="#10183A">China (North) - 39%</text>
+</svg>
