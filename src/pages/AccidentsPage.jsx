@@ -92,7 +92,13 @@ function AccidentsPage() {
   const scatterChartData = {
     datasets: [{
       label: 'Termination Height',
-      data: termHeightData.points.map(p => ({ x: p.routeIdx, y: p.height })),
+      data: termHeightData.points.map(p => ({
+        x: p.routeIdx,
+        y: p.height,
+        route: p.route,
+        reason: p.reason,
+        termNote: p.termNote
+      })),
       backgroundColor: '#00508D',
       pointRadius: 6,
       pointHoverRadius: 8
@@ -105,6 +111,22 @@ function AccidentsPage() {
     plugins: {
       legend: {
         display: false
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const point = context.raw
+            const lines = [
+              `Route: ${point.route}`,
+              `Height: ${point.y.toLocaleString()}m`,
+              `Reason: ${point.reason}`
+            ]
+            if (point.termNote) {
+              lines.push(`Note: ${point.termNote}`)
+            }
+            return lines
+          }
+        }
       }
     },
     scales: {
@@ -198,6 +220,7 @@ function AccidentsPage() {
               <div className="accidents-chart">
                 <ScatterChart data={scatterChartData} options={scatterOptions} />
               </div>
+              <span className="chart-hover-hint">hover for more information</span>
             </div>
 
             <div className="accidents-chart-section causes-chart">
@@ -230,7 +253,7 @@ function AccidentsPage() {
 
         <p className="accidents-description">
           {activeTab === 'deaths'
-            ? `Understanding what goes wrong on Mount Everest reveals that the descent is often more dangerous than the ascent itself. Between 1922 and 2025, 348 people lost their lives on Everest despite advancements in technology, forecasting, equipment, and climbing experience. The mountain remains unpredictable, reminding climbers that no amount of preparation can fully eliminate risk or guarantee safety.`
+            ? `Understanding what goes wrong on Mount Everest reveals that the descent is often more dangerous than the ascent itself. Between 1922 and 2025, 344 people lost their lives on Everest despite advancements in technology, forecasting, equipment, and climbing experience. The mountain remains unpredictable, reminding climbers that no amount of preparation can fully eliminate risk or guarantee safety.`
             : `Expeditions can be terminated for various reasons before reaching the summit. Weather remains the dominant factor, but illness, accidents, and personal reasons also play significant roles.`
           }
         </p>

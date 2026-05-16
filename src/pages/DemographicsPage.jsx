@@ -59,7 +59,7 @@ function DemographicsPage() {
   const onEachCountry = (feature, layer) => {
     const countryName = feature.properties.name
     const count = geoJsonSummitMap[countryName] || 0
-    layer.bindPopup(`<b>${countryName}</b><br>Summits: ${count}`)
+    layer.bindTooltip(`<b>${countryName}</b><br>Summits: ${count}`, { sticky: true })
   }
 
   // Calculate stats
@@ -112,7 +112,7 @@ function DemographicsPage() {
         <h1 className="demographics-title">DEMOGRAPHICS</h1>
 
         <p className="demographics-description">
-          Nepal has highest summits, largely due to the Sherpa community who serve as guides and support staff. Women remain significantly underrepresented at ~7%, though participation has grown steadily since 1975.
+          <span className="highlight-text">Nepal</span> has highest summits, largely due to the <span className="highlight-text">Sherpa community</span> who serve as guides and support staff. <span className="highlight-text">Women</span> remain significantly underrepresented at <span className="highlight-text">~7%</span>, though participation has grown steadily since <span className="highlight-text">1975</span>.
         </p>
 
         <div className="demographics-kpis-list">
@@ -165,7 +165,7 @@ function DemographicsPage() {
         </div>
 
         <div className="demographics-section">
-          <h3 className="demographics-section-title">Gender Distribution</h3>
+          <h3 className="demographics-section-title">Gender Distribution by Summiters</h3>
           <div className="demographics-chart demographics-pie">
             <PieChart data={genderPieData} />
           </div>

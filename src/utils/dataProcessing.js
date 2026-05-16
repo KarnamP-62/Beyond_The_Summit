@@ -249,15 +249,17 @@ export function processDescentData(expeditions) {
   everestExp.forEach(exp => {
     const year = exp.YEAR
     const name = exp.LEADERS || 'Unknown'
+    const nationality = exp.NATION || 'Unknown'
+    const success = isTruthy(exp.SUCCESS) ? 'Yes' : 'No'
 
     if (isTruthy(exp.SKI)) {
-      skiRecords.push({ year, name })
+      skiRecords.push({ year, name, nationality, success })
     }
     if (isTruthy(exp.PARAPENTE)) {
-      parapenteRecords.push({ year, name })
+      parapenteRecords.push({ year, name, nationality, success })
     }
     if (isTruthy(exp.TRAVERSE)) {
-      traverseRecords.push({ year, name })
+      traverseRecords.push({ year, name, nationality, success })
     }
   })
 
@@ -431,7 +433,8 @@ export function processTerminationHeight(expeditions) {
       routeIdx,
       height: exp.HIGHPOINT,
       reason,
-      route: exp.ROUTE1
+      route: exp.ROUTE1,
+      termNote: exp.TERMNOTE || ''
     })
   })
 

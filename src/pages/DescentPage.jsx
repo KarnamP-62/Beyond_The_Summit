@@ -53,7 +53,7 @@ function DescentPage() {
       <div className="descent-right">
         <h1 className="descent-title">DESCENT</h1>
         <p className="descent-description">
-          What may surprise many is that the descent from Mount Everest is often more dangerous than the climb to the summit itself. Between 1922 and 2025, 122 out of 339 documented deaths occurred during descent. Many climbers push themselves to their physical and mental limits reaching the summit, leaving little energy, oxygen, or focus for the journey back down. Exhaustion and reduced decision-making at extreme altitude often lead to fatal mistakes. The dangers of descent are influenced by several factors, including falls, severe exhaustion, exposure and frostbite, altitude sickness, avalanches, and other high-altitude illnesses and complications.
+          What may surprise many is that the descent from Mount Everest is often more dangerous than the climb to the summit itself. Between <span className="highlight-text">1922 and 2025</span>, <span className="highlight-text">122 out of 339 documented deaths</span> occurred during descent. Many climbers push themselves to their physical and mental limits reaching the summit, leaving little energy, oxygen, or focus for the journey back down. Exhaustion and reduced decision-making at extreme altitude often lead to fatal mistakes. The dangers of descent are influenced by several factors, including falls, severe exhaustion, exposure and frostbite, altitude sickness, avalanches, and other high-altitude illnesses and complications.
         </p>
 
         <div className="descent-kpis">

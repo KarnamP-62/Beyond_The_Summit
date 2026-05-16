@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 function DescentChart({ records = [] }) {
-  const [tooltip, setTooltip] = useState({ show: false, content: '', x: 0, y: 0 })
+  const [tooltip, setTooltip] = useState({ show: false, name: '', year: '', nationality: '', success: '', x: 0, y: 0 })
 
   // Group records by year
   const byYear = {}
@@ -24,14 +24,17 @@ function DescentChart({ records = [] }) {
     const rect = e.target.getBoundingClientRect()
     setTooltip({
       show: true,
-      content: `${record.year} - ${record.name}`,
+      name: record.name,
+      year: record.year,
+      nationality: record.nationality || 'Unknown',
+      success: record.success || 'Unknown',
       x: rect.left + rect.width / 2,
       y: rect.top - 10
     })
   }
 
   const handleMouseLeave = () => {
-    setTooltip({ show: false, content: '', x: 0, y: 0 })
+    setTooltip({ show: false, name: '', year: '', nationality: '', success: '', x: 0, y: 0 })
   }
 
   if (yearData.length === 0) {
@@ -47,11 +50,6 @@ function DescentChart({ records = [] }) {
   return (
     <div className="descent-chart-container">
       <div className="descent-chart-wrapper">
-        <div className="descent-chart-yaxis">
-          {[...Array(maxCount)].map((_, i) => (
-            <span key={i} className="descent-chart-ylabel">{maxCount - i}</span>
-          ))}
-        </div>
         <div className="descent-chart-content">
           <div className="descent-chart-bars">
             {yearData.map((d, index) => (
@@ -72,6 +70,8 @@ function DescentChart({ records = [] }) {
               <span key={index} className="descent-chart-xlabel">{d.year}</span>
             ))}
           </div>
+          <div className="descent-chart-xaxis-title">Year</div>
+          <span className="chart-hover-hint">hover for more information</span>
         </div>
       </div>
       {tooltip.show && (
@@ -84,7 +84,9 @@ function DescentChart({ records = [] }) {
             transform: 'translate(-50%, -100%)'
           }}
         >
-          {tooltip.content}
+          <div><strong>Name:</strong> {tooltip.name}</div>
+          <div><strong>Year:</strong> {tooltip.year}</div>
+          <div><strong>Nationality:</strong> {tooltip.nationality}</div>
         </div>
       )}
     </div>
