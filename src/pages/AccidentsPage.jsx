@@ -230,7 +230,7 @@ function AccidentsPage() {
 
         <p className="accidents-description">
           {activeTab === 'deaths'
-            ? `Understanding what goes wrong on Mount Everest reveals that the descent is often more dangerous than the ascent itself. Between 1922 and 2025, 348 people lost their lives on Everest despite advancements in technology, forecasting, equipment, and climbing experience. The mountain remains unpredictable, reminding climbers that no amount of preparation can fully eliminate risk or guarantee safety.`
+            ? `Understanding what goes wrong on Mount Everest reveals that the descent is often more dangerous than the ascent itself. Between 1922 and 2025, 344 people lost their lives on Everest despite advancements in technology, forecasting, equipment, and climbing experience. The mountain remains unpredictable, reminding climbers that no amount of preparation can fully eliminate risk or guarantee safety.`
             : `Expeditions can be terminated for various reasons before reaching the summit. Weather remains the dominant factor, but illness, accidents, and personal reasons also play significant roles.`
           }
         </p>

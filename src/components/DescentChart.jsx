@@ -47,6 +47,7 @@ function DescentChart({ records = [] }) {
   return (
     <div className="descent-chart-container">
       <div className="descent-chart-wrapper">
+        <div className="descent-chart-yaxis-title">Count</div>
         <div className="descent-chart-yaxis">
           {[...Array(maxCount)].map((_, i) => (
             <span key={i} className="descent-chart-ylabel">{maxCount - i}</span>
@@ -72,6 +73,7 @@ function DescentChart({ records = [] }) {
               <span key={index} className="descent-chart-xlabel">{d.year}</span>
             ))}
           </div>
+          <div className="descent-chart-xaxis-title">Year</div>
         </div>
       </div>
       {tooltip.show && (

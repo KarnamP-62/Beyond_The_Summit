@@ -76,11 +76,11 @@ function TimelinePage() {
   const tabContent = {
     expeditions: {
       title: 'Expeditions Over Time',
-      description: 'Everest has transformed from an elite mountaineering challenge to a commercial venture. Expeditions grew from single digits in the 1970s to over 100 per year in the 2000s. This has improved success rates but raised concerns about overcrowding and environmental impact.'
+      description: 'An expedition consists of one or more climbers attempting to summit Mount Everest, often supported by Sherpas and hired staff who assist throughout the journey. Everest has transformed from an elite mountaineering challenge to a commercial venture. Expeditions grew from single digits in the 1970s to over 100 per year in the 2000s. This has improved success rates but raised concerns about overcrowding and environmental impact.'
     },
     summits: {
       title: 'Summit Members vs Hired Staff',
-      description: 'Hired staff (primarily Sherpas) now outnumber foreign climbers on successful summits, reflecting their crucial role in expedition success. Nepali climbers, primarily Sherpas, account for the majority of summits. They fix ropes, carry supplies, and guide clients. Without them, commercial Everest climbing would be impossible. They also bear a disproportionate share of the risk.'
+      description: 'In this dataset, a summiter refers to an individual climber who successfully reached the summit without terminating the expedition. Hired staff (primarily Sherpas) now outnumber foreign climbers on successful summits, reflecting their crucial role in expedition success. Nepali climbers, primarily Sherpas, account for the majority of summits. They fix ropes, carry supplies, and guide clients. Without them, commercial Everest climbing would be impossible. They also bear a disproportionate share of the risk.'
     },
     summitDays: {
       title: 'Average Days to Summit',
@@ -197,6 +197,7 @@ function TimelinePage() {
         </div>
         <div className="timeline-chart-vertical">
           {renderLeftChart()}
+          <span className="chart-hover-hint">hover for more information</span>
         </div>
       </div>
 
@@ -220,7 +221,7 @@ function TimelinePage() {
             className={`timeline-tab ${activeTab === 'summitDays' ? 'active' : ''}`}
             onClick={() => setActiveTab('summitDays')}
           >
-            SUMMIT TIME
+            EXPEDITION TIME
           </button>
         </div>
 

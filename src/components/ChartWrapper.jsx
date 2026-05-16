@@ -42,11 +42,13 @@ const defaultOptions = {
   scales: {
     x: {
       ticks: { color: '#10183A' },
-      grid: { display: false }
+      grid: { display: false },
+      border: { display: true, color: '#10183A' }
     },
     y: {
       ticks: { color: '#10183A' },
       grid: { color: 'rgba(0, 80, 141, 0.1)' },
+      border: { display: true, color: '#10183A' },
       beginAtZero: true
     }
   }
