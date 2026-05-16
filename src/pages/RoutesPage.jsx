@@ -14,16 +14,16 @@ function RoutesPage() {
   const mainRoutesChartData = {
     labels: mainRoutesData.routes,
     datasets: [
-      { label: 'Summit Members', data: mainRoutesData.summitMembers, backgroundColor: '#1E7197' },
-      { label: 'Deaths', data: mainRoutesData.deaths, backgroundColor: '#DC2626' }
+      { label: 'Summit Members', data: mainRoutesData.summitMembers, backgroundColor: '#00508D' },
+      { label: 'Deaths', data: mainRoutesData.deaths, backgroundColor: '#E0312E' }
     ]
   }
 
   const alternateRoutesChartData = {
     labels: otherRoutesData.routes,
     datasets: [
-      { label: 'Summit Members', data: otherRoutesData.summitMembers, backgroundColor: '#1E7197' },
-      { label: 'Deaths', data: otherRoutesData.deaths, backgroundColor: '#DC2626' }
+      { label: 'Summit Members', data: otherRoutesData.summitMembers, backgroundColor: '#00508D' },
+      { label: 'Deaths', data: otherRoutesData.deaths, backgroundColor: '#E0312E' }
     ]
   }
 
@@ -62,7 +62,7 @@ function RoutesPage() {
         <div className="routes-section">
           <img src={Routesmap} alt="Everest Routes Map" className="routes-map-image" />
           <p className="routes-map-description">
-            Different Everest routes show varying expedition and termination patterns based on <span className="highlight-text">terrain difficulty</span>, <span className="highlight-text">weather exposure</span>, and <span className="highlight-text">technical challenges</span>. Although there are <span className="highlight-text">136 documented routes</span> on Mount Everest, expedition activity is concentrated on just two major routes: the <span className="highlight-text">South Col–Southeast Ridge</span> and the <span className="highlight-text">North Col–Northeast Ridge</span>, which together account for nearly <span className="highlight-text">89% of all climbs</span>. In contrast, <span className="highlight-text">nearly 100 routes</span> have been attempted only once, often as exploratory missions, route variations, or partial expeditions.
+            Different Everest routes show varying expedition and termination patterns based on terrain difficulty, weather exposure, and technical challenges. Although there are <span className="highlight-text">136 documented routes</span> on Mount Everest, expedition activity is concentrated on just two major routes: the <span className="highlight-text">South Col–Southeast Ridge</span> and the <span className="highlight-text">North Col–Northeast Ridge</span>, which together account for nearly <span className="highlight-text">89% of all climbs</span>. In contrast, nearly 100 routes have been attempted only once, often as exploratory missions, route variations, or partial expeditions.
           </p>
         </div>
       </div>
@@ -71,7 +71,7 @@ function RoutesPage() {
         <h1 className="routes-title">ROUTES</h1>
 
         <p className="routes-description">
-          The <span className="highlight-text">South Col route from Nepal</span> dominates Everest expeditions, accounting for <span className="highlight-text">{nepalPercent}%</span> of all climbs. Better infrastructure, established camps, and experienced <span className="highlight-text">Sherpa support</span> make it the preferred choice over the <span className="highlight-text">North Col route from Tibet</span>.
+          The <span className="highlight-text">South Col route from Nepal</span> dominates Everest expeditions, accounting for <span className="highlight-text">{nepalPercent}%</span> of all climbs. Better infrastructure, established camps, and experienced Sherpa support make it the preferred choice over the North Col route from Tibet.
         </p>
 
         <div className="routes-kpis">

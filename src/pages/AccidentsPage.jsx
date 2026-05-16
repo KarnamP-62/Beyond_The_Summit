@@ -92,7 +92,13 @@ function AccidentsPage() {
   const scatterChartData = {
     datasets: [{
       label: 'Termination Height',
-      data: termHeightData.points.map(p => ({ x: p.routeIdx, y: p.height })),
+      data: termHeightData.points.map(p => ({
+        x: p.routeIdx,
+        y: p.height,
+        route: p.route,
+        reason: p.reason,
+        termNote: p.termNote
+      })),
       backgroundColor: '#00508D',
       pointRadius: 6,
       pointHoverRadius: 8
@@ -105,6 +111,22 @@ function AccidentsPage() {
     plugins: {
       legend: {
         display: false
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const point = context.raw
+            const lines = [
+              `Route: ${point.route}`,
+              `Height: ${point.y.toLocaleString()}m`,
+              `Reason: ${point.reason}`
+            ]
+            if (point.termNote) {
+              lines.push(`Note: ${point.termNote}`)
+            }
+            return lines
+          }
+        }
       }
     },
     scales: {
@@ -198,6 +220,7 @@ function AccidentsPage() {
               <div className="accidents-chart">
                 <ScatterChart data={scatterChartData} options={scatterOptions} />
               </div>
+              <span className="chart-hover-hint">hover for more information</span>
             </div>
 
             <div className="accidents-chart-section causes-chart">

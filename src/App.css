@@ -367,11 +367,11 @@ body:has(.accidents-tab) {
 }
 
 .intro-bar.nepal {
-  background-color: #1E40AF;
+  background-color: #00508D;
 }
 
 .intro-bar.china {
-  background-color: #DC2626;
+  background-color: #E0312E;
 }
 
 .intro-bar-label {
@@ -822,8 +822,8 @@ body:has(.accidents-tab) {
 }
 
 .accidents-chart {
-  height: 38vh;
-  max-height: 38vh;
+  height: 35vh;
+  max-height: 35vh;
   width: 100%;
   position: relative;
 }
@@ -837,8 +837,8 @@ body:has(.accidents-tab) {
 }
 
 .accidents-chart-section.causes-chart .accidents-chart {
-  height: 38vh;
-  max-height: 38vh;
+  height: 35vh;
+  max-height: 35vh;
 }
 
 .accidents-kpis {
@@ -1346,7 +1346,7 @@ body:has(.accidents-tab) {
 }
 
 .routes-kpi-danger {
-  color: #DC2626;
+  color: #00508D;
 }
 
 .routes-kpi-safe {
@@ -1479,7 +1479,6 @@ body:has(.accidents-tab) {
 
 .descent-chart-content {
   flex: 1;
-  border-left: var(--border-thin) solid var(--text-dark);
   padding-left: clamp(0.3rem, 0.5vw, 0.5rem);
 }
 
@@ -1488,7 +1487,6 @@ body:has(.accidents-tab) {
   gap: clamp(0.3rem, 0.5vw, 0.5rem);
   align-items: flex-end;
   min-height: clamp(60px, 10vh, 100px);
-  border-bottom: var(--border-thin) solid var(--text-dark);
   padding-bottom: var(--spacing-xs);
 }
 
@@ -1502,6 +1500,8 @@ body:has(.accidents-tab) {
   display: flex;
   gap: clamp(0.3rem, 0.5vw, 0.5rem);
   padding-top: var(--spacing-xs);
+  border-top: var(--border-thin) solid var(--text-dark);
+  margin-top: var(--spacing-xs);
 }
 
 .descent-chart-xaxis-title {

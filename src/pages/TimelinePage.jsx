@@ -24,7 +24,7 @@ function TimelinePage() {
         tension: 0.3
       },
       {
-        label: 'Successful',
+        label: 'Successful Expedition',
         data: expeditionData.successful,
         borderColor: '#E0312E',
         backgroundColor: 'rgba(224, 49, 46, 0.1)',

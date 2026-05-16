@@ -59,7 +59,7 @@ function DemographicsPage() {
   const onEachCountry = (feature, layer) => {
     const countryName = feature.properties.name
     const count = geoJsonSummitMap[countryName] || 0
-    layer.bindPopup(`<b>${countryName}</b><br>Summits: ${count}`)
+    layer.bindTooltip(`<b>${countryName}</b><br>Summits: ${count}`, { sticky: true })
   }
 
   // Calculate stats
@@ -165,7 +165,7 @@ function DemographicsPage() {
         </div>
 
         <div className="demographics-section">
-          <h3 className="demographics-section-title">Gender Distribution</h3>
+          <h3 className="demographics-section-title">Gender Distribution by Summiters</h3>
           <div className="demographics-chart demographics-pie">
             <PieChart data={genderPieData} />
           </div>
